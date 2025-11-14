@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic Tac Toe Multiplayer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <h1>Tic Tac Toe 🤖🌐</h1>
+
+    <!-- Profile Section -->
+    <div id="profileSection" class="profile">
+      <div class="profile-box">
+        <img id="profilePhoto" src="default-avatar.png" alt="Profile" />
+        <input type="file" id="uploadPhoto" accept="image/*" class="hidden" />
+        <button id="uploadBtn">Upload Photo</button>
+      </div>
+      <input id="playerName" type="text" placeholder="Enter your name" />
+      <button id="saveName">Save</button>
+      <p id="currentName" class="hidden"></p>
+    </div>
+
+    <!-- Mode Selection -->
+    <div id="modeSection" class="mode hidden">
+      <h3>Select Game Mode:</h3>
+      <button id="singleMode">Play vs Computer</button>
+      <button id="onlineMode">Play Online</button>
+    </div>
+
+    <!-- Level Section -->
+    <div id="levelSection" class="level hidden">
+      <label>Board Size:</label>
+      <select id="boardSize">
+        <option value="3">3×3</option>
+        <option value="4">4×4</option>
+        <option value="5">5×5</option>
+        <option value="6">6×6</option>
+        <option value="7">7×7</option>
+      </select>
+      <label>Difficulty:</label>
+      <select id="difficulty">
+        <option value="easy">Easy</option>
+        <option value="medium" selected>Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+      <button id="startBtn">Start Game</button>
+    </div>
+
+    <!-- Online Setup -->
+    <div id="onlineSetup" class="hidden">
+      <button id="createRoom">Create Room</button>
+      <input id="roomInput" placeholder="Enter Room ID" />
+      <button id="joinRoom">Join Room</button>
+      <p id="roomInfo"></p>
+    </div>
+
+    <!-- Game Area -->
+    <div id="gameArea" class="hidden">
+      <h2 id="status">Your Turn (X)</h2>
+      <div id="board" class="board"></div>
+      <button id="restartBtn">Restart</button>
+    </div>
+
+    <!-- Result -->
+    <div id="result" class="hidden">
+      <h2 id="resultText"></h2>
+      <div class="player-result">
+        <img id="resultPhoto" src="default-avatar.png" />
+        <p id="resultName"></p>
+      </div>
+      <button id="playAgain">Play Again</button>
+      <button id="shareScore">Share Score</button>
+    </div>
+  </main>
+
+  <footer><small>Single or Online Multiplayer Tic Tac Toe</small></footer>
+
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
+
